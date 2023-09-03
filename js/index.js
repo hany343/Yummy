@@ -109,6 +109,19 @@ async function getMealsCategories() {
     $(".splash-screen").fadeOut(500)
 
 }
+async function getMealsInCategory(category) {
+    closeSidbar()
+    $(".splash-screen").fadeIn(300)
+
+    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+    response = await response.json()
+
+
+    displayItems(response.meals.slice(0, 20))
+    $(".splash-screen").fadeOut(300)
+
+}
+
 
 //Fetching meals Areas
 async function getMealsAreas() {
@@ -128,6 +141,32 @@ async function getMealsAreas() {
     $(".splash-screen").fadeOut(500)
 
 }
+async function getMealsOfArea(area) {
+    closeSidbar()
+    $(".splash-screen").fadeIn(200)
+
+    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
+    response = await response.json()
+
+
+    displayItems(response.meals.slice(0, 20))
+    $(".splash-screen").fadeOut(300)
+
+}
+
+async function getIngredientsMeals(ingredients) {
+    closeSidbar()
+    $(".splash-screen").fadeIn(200)
+
+    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredients}`)
+    response = await response.json()
+
+
+    displayItems(response.meals.slice(0, 20))
+    $(".splash-screen").fadeOut(300)
+
+
+}
 
 //Display meals Areas on html
 function displayMealsAreas(areaArr){
@@ -141,7 +180,7 @@ document.getElementById('items-container').innerHTML=``
             
             document.getElementById('items-container').innerHTML+=`
             <div class="col-md-3">
-            <div onclick="getAreaMeals('${areaArr[i].strArea}')" class="rounded-2 text-center cursor-pointer">
+            <div onclick="getMealsOfArea('${areaArr[i].strArea}')" class="rounded-2 text-center cursor-pointer">
                     <i class="fa-solid fa-house-laptop fa-4x"></i>
                     <h3>${areaArr[i].strArea}</h3>
             </div>
@@ -170,6 +209,8 @@ async function getMealsIngredients() {
     $(".splash-screen").fadeOut(500)
 
 }
+
+
 //Display meals Ingredients on html
 function displayIngr(ingArr){
     console.log('displaying Ingredients')
@@ -198,14 +239,14 @@ document.getElementById('items-container').innerHTML=``
 function displayItems(itemsArr){
     console.log('displaying items')
     
-document.getElementById('items-container').innerHTML=``
+     document.getElementById('items-container').innerHTML=``
 
     if(itemsArr.length>0){
 
         for(i=0;i<itemsArr.length;i++){
             
             document.getElementById('items-container').innerHTML+=`
-            <div class="item-box col-md-3">
+            <div  class="item-box col-md-3">
             <div class="image position-relative rounded-2 overflow-hidden cursor-pointer">
                 <img class="w-100 " src="${itemsArr[i].strMealThumb}" alt="" srcset="">
                 <div class="over-lay d-flex align-items-center  h-100 w-100 start-0 top-100  position-absolute ">
@@ -230,7 +271,7 @@ document.getElementById('items-container').innerHTML=``
         for(i=0;i<catsArr.length;i++){
             
             document.getElementById('items-container').innerHTML+=`
-            <div class="item-box col-md-3">
+            <div onclick="getMealsInCategory('${catsArr[i].strCategory}')" class="item-box col-md-3">
             <div class="image position-relative rounded-2 overflow-hidden cursor-pointer">
                 <img class="w-100 " src="${catsArr[i].strCategoryThumb}" alt="" srcset="">
                 <div class="over-lay d-flex flex-column align-items-center justify-content-center h-100 w-100 start-0 top-100  position-absolute ">
