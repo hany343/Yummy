@@ -1,0 +1,96 @@
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Hany ragab, h.ragab611@gmail.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Yummy</title>
+</head>
+
+
+<body class="overflow-visible">
+
+    
+    <!--Splash screen -->
+     <div class="splash-screen justify-content-center align-items-center position-fixed top-0 start-0 end-0 bottom-0 bg-black  ">
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div> 
+
+
+<!-- Side menu bar container -->
+   <div class="side-container min-vh-100 position-fixed d-flex top-0 ">
+
+
+        <div class="side-menu d-flex flex-column justify-content-between  px-4 ">
+
+            <div class="menu-items">
+                <ul class="list-unstyled overflow-hidden">
+                    <li onclick="searchForm()" class="py-2 position-relative cursor-pointer">
+                        Search</li>
+                    <li onclick="getMealsCategories()" class="py-2 position-relative cursor-pointer">
+                        Categories</li>
+                    <li onclick="getMealsAreas()" class="py-2 position-relative cursor-pointer">Area</li>
+                    <li onclick="getMealsIngredients()" class="py-2 position-relative cursor-pointer">
+                        Ingredients</li>
+                    <li onclick="contactForm();" class="py-2 position-relative cursor-pointer">Contact
+                        Us</li>
+                </ul>
+            </div>
+        
+
+        <div class="menu-footer mb-3">
+            <div class="social-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            <p>Copyright © 2019 All Rights <br>Reserved.</p>
+        </div>
+</div>
+        <div class="side-mover d-flex flex-column justify-content-between align-items-center p-2 py-4 bg-white">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="Yummy" width="100%">
+            </div>
+
+            <div class="sliders text-bg-light cursor-pointer">
+                <i class="slide-button fa-solid fa-2x fa-x"></i>
+                <!-- <i class="slide-button  fa-solid fa-align-justify fa-2x"></i> -->
+            </div>
+
+            <div class="web-icons text-bg-light ">
+                <i class="fa-solid fa-globe d-block"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+        </div>
+
+
+    </div>
+
+
+<!-- Content data container -->
+<div class="data-container container w-75">
+    <!-- Search form -->
+<div id="search-form" class="row d-flex justify-content-center  w-100 m-3">
+   
+   
+</div>
+
+
+
+<!-- Display result items -->
+    <div id="items-container" class="items-display row g-5 py-3 justify-content-center align-items-center min-vh-100">
+       
+       
+    </div>
+</div>
+<script src="js/jquery-3.7.1.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js" integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

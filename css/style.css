@@ -1,0 +1,120 @@
+
+/* Code by Hany Ragab
+h.ragab611@gmail.com */
+
+body{
+    background-color: #0D0D0D;
+    color: #f9f6f6 !important;
+    overflow: hidden;
+}
+
+
+.side-container{
+    z-index: 99;
+}
+
+.side-menu{
+    background-color: #0D0D0D;
+}
+
+/* OverLay animation */
+.over-lay{
+    background-color: #f9f6f6ca;
+    transition: .5s;
+}
+.item-box:hover .over-lay{
+    top: 0 !important;
+}
+
+.logo{
+    width: 50px;
+}
+
+.splash-screen{
+    z-index: 200;
+    display: flex;
+}
+
+
+i{
+    cursor: pointer;
+}
+
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+
+
+.forminput{
+    position: relative;
+}
+
+
+.namediv::after{
+    content: 'Email not valid "example@domain.com';
+    position: absolute;
+    top: 95%;
+    left: 5;
+    width: 95%;
+    color: red;
+    font-size: 11px;
+    background-color:  rgb(255, 253, 127);
+    z-index: 10;
+}
+.maildiv::after{
+    content: 'Email not valid "example@domain.com';
+    position: absolute;
+    top: 95%;
+    left: 5;
+    width: 95%;
+    color: red;
+    font-size: 11px;
+    background-color:  rgb(255, 253, 127);
+    z-index: 10;
+}
+.phonediv::after{
+    content: 'Phone not valid "01123456789';
+    position: absolute;
+    top: 95%;
+    left: 5;
+    width: 95%;
+    color: red;
+    font-size: 11px;
+    background-color:  rgb(255, 253, 127);
+    z-index: 10;
+}
+.agediv::after{
+    content: 'Email not valid "Age not valid "Number from 18 to 100"';
+    position: absolute;
+    top: 95%;
+    left: 5;
+    width: 95%;
+    color: red;
+    font-size: 11px;
+    background-color: rgb(255, 253, 127);
+    z-index: 10;
+}
+.passdiv::after{
+    content: 'Password not valid min length 5 chars';
+    position: absolute;
+    top: 95%;
+    left: 5;
+    width: 95%;
+    color: red;
+    font-size: 11px;
+    background-color:  rgb(255, 253, 127);
+    z-index: 10;
+}
+.cpassdiv::after{
+    content: 'Confirm password not valid';
+    position: absolute;
+    top: 95%;
+    left: 5;
+    width: 95%;
+    color: red;
+    font-size: 11px;
+    background-color:  rgb(255, 253, 127);
+    z-index: 10;
+}
